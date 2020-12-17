@@ -1,66 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/shop.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container pt-3">
-                    <!-- LOGO -->
-            <div class="row">
-                <div class="col-md-2">
-                    <a class="navbar-brand logo" href="#">AMOZONIA</a>
-                </div>
-                <div class="col-md-8">
-                    <input type="text" class="search form-control" placeholder="Buscar...">
-                </div>
-                <div class="col-md-1">
-                    <a href="#">Sign In</a>
-                </div>
-                <div class="col-md-1">
-                    <a href="#">Carrinho</a>
-                </div>
-            </div>
-        </div>
-                    <!-- nav menu-->
-            <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav w-100 nav-justified">
+{% extends 'base.html' %}
+{% load static %}
 
-                        <!-- menu item Bijuterias Acessorio -->
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle dropdown btn" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bijuterias & Acessório</a>
-
-                        <!-- drop down Bijuterias Acessorio -->
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a href="#" class="dropdown-item">Anel</a>
-                              <a href="#" class="dropdown-item">Bolsa</a>
-                              <a href="#" class="dropdown-item">Bijuterias</a>
-                            
-                          </div>
-                        </div>
-
-                        <li class="nav-item"><a href="" class="nav-link">Roupas</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Casa & Vida</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Saúde & Beleza</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Presentes</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Arte & Colecionáveis</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Suprimentos</a></li>
-                    </ul>
-                </div>
-            </nav>
-    </div>
-     <!--END CONTAINER  -->
-     <div class="border-bottom"></div>
-    </header>
-
+{% block content %}
     <main class="checkout">
         <div class=" vh-10 primary-color">
             <div class="container">
@@ -156,19 +97,19 @@
                     
 
                     <div class="d-flex flex-row justify-content-between align-items-center border-bottom py-3">
-                        <div><a href="#"><img src="images/candle.jpg" class="img-fluid vh-10" alt="candle"></a></div>
+                        <div><a href="#"><img src="{% static 'images/candle.jpg' %}" class="img-fluid vh-10" alt="candle"></a></div>
                         <div><a href="#">Anel</a></div>
                         <div>R$130 <span class="discount"> R$99</span></div>
                         <div><a href="#">X</a></div>
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center border-bottom py-3">
-                        <div><a href="#"><img src="images/candle.jpg" class="img-fluid vh-10" alt="candle"></a></div>
+                        <div><a href="#"><img src="{% static 'images/candle.jpg' %}" class="img-fluid vh-10" alt="candle"></a></div>
                         <div><a href="#">Anel</a></div>
                         <div>R$130 <span class="discount"> R$99</span></div>
                         <div><a href="#">X</a></div>
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center border-bottom py-3">
-                        <div><a href="#"><img src="images/candle.jpg" class="img-fluid vh-10" alt="candle"></a></div>
+                        <div><a href="#"><img src="{% static 'images/candle.jpg' %}" class="img-fluid vh-10" alt="candle"></a></div>
                         <div><a href="#">Anel</a></div>
                         <div>R$130 <span class="discount"> R$99</span></div>
                         <div><a href="#">X</a></div>
@@ -218,5 +159,4 @@
         </div>
     </main>
  
-</body>
-</html>
+{% endblock content %}

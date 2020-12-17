@@ -1,10 +1,76 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bem-Vindo</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body> 
+<body>
+    <header class="header">
+        <div class="container pt-3">
+                    <!-- LOGO -->
+            <div class="row">
+                <div class="col-md-2">
+                    <a class="navbar-brand logo" href="{% url 'core:home'%}">AMOZONIA</a>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="search form-control" placeholder="Buscar...">
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Sign In</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="{% url 'core:cart' %}">Carrinho</a>
+                </div>
+            </div>
+        </div>
+                    <!-- nav menu-->
+            <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav w-100 nav-justified">
+
+                        <!-- menu item Bijuterias Acessorio -->
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle dropdown btn" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bijuterias &#38; Acessório</a>
+
+                        <!-- drop down Bijuterias Acessorio -->
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a href="{% url 'core:shop' %}" class="dropdown-item">Anel</a>
+                              <a href="{% url 'core:shop' %}" class="dropdown-item">Bolsa</a>
+                              <a href="{% url 'core:shop' %}" class="dropdown-item">Bijuterias</a>
+                            
+                          </div>
+                        </div>
+
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Roupas</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Casa &#38; Vida</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Saúde &#38; Beleza</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Presentes</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Arte</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Suprimentos</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </div>
+     <!--END CONTAINER  -->
+    </header>
+<div class="border-bottom mb-3"></div>
+
+{% block content %}
+{% endblock content %}
+
+<footer class="vh-25 bg-dark"></footer>
+
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+{% endblock scripts %}
+
 </body>
 </html>

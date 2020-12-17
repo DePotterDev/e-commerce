@@ -1,66 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-Vindo</title>
-    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <header class="header">
-        <div class="container pt-3">
-                    <!-- LOGO -->
-            <div class="row">
-                <div class="col-md-2">
-                    <a class="navbar-brand logo" href="home.html">AMOZONIA</a>
-                </div>
-                <div class="col-md-8">
-                    <input type="text" class="search form-control" placeholder="Buscar...">
-                </div>
-                <div class="col-md-1">
-                    <a href="#">Sign In</a>
-                </div>
-                <div class="col-md-1">
-                    <a href="#">Carrinho</a>
-                </div>
-            </div>
-        </div>
-                    <!-- nav menu-->
-            <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav w-100 nav-justified">
-
-                        <!-- menu item Bijuterias Acessorio -->
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle dropdown btn" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bijuterias &#38; Acessório</a>
-
-                        <!-- drop down Bijuterias Acessorio -->
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a href="#" class="dropdown-item">Anel</a>
-                              <a href="#" class="dropdown-item">Bolsa</a>
-                              <a href="#" class="dropdown-item">Bijuterias</a>
-                            
-                          </div>
-                        </div>
-
-                        <li class="nav-item"><a href="" class="nav-link">Roupas</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Casa &#38; Vida</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Saúde &#38; Beleza</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Presentes</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Arte</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Suprimentos</a></li>
-                    </ul>
-                </div>
-            </nav>
-    </div>
-     <!--END CONTAINER  -->
-    </header>
-    <div class="border-bottom mb-3"></div>
-
 
     <main>
         <div class="container">
@@ -168,74 +109,25 @@
                 <h2 class="sub-title">Novos</h2>
                 <!-- PRODUCTS -->
                 <div class="row my-3">
-                    <div class="col-md-3">
+                {% for item in items %}
+                    <div class="col-md-3 mb-3">
                         <a href="#">
                             <div class="card">
                                 <img src="{% static 'images/candle.jpg' %}" class="img-fluid" alt="">
                                 <a href=""></a>
                                 <div class="card-body">
                                     <a href="#">
-                                        <h4 class="text-center">Item Category</h4>
+                                        <h4 class="text-center">{{ item.category }}</h4>
                                     </a>
                                     <h5 class="text-center">
-                                        <a href="#">Item Title</a>
+                                        <a href="#">{{ item.title }}</a>
                                     </h5>
-                                    <h6 class="text-center">R$197</h6>
+                                    <h6 class="text-center">R${{ item.price }}</h6>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-3">
-                        <a href="#">
-                            <div class="card">
-                                <img src="{% static 'images/candle.jpg' %}" class="img-fluid" alt="">
-                                <a href=""></a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="text-center">Item Category</h4>
-                                    </a>
-                                    <h5 class="text-center">
-                                        <a href="#">Item Title</a>
-                                    </h5>
-                                    <h6 class="text-center">R$197</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="#">
-                            <div class="card">
-                                <img src="{% static 'images/candle.jpg' %}" class="img-fluid" alt="">
-                                <a href=""></a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="text-center">Item Category</h4>
-                                    </a>
-                                    <h5 class="text-center">
-                                        <a href="#">Item Title</a>
-                                    </h5>
-                                    <h6 class="text-center">R$197</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="#">
-                            <div class="card">
-                                <img src="{% static 'images/candle.jpg' %}" class="img-fluid" alt="">
-                                <a href=""></a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="text-center">Item Category</h4>
-                                    </a>
-                                    <h5 class="text-center">
-                                        <a href="#">Item Title</a>
-                                    </h5>
-                                    <h6 class="text-center">R$197</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    {% endfor %}
                 </div>
 
                 <nav class="py-3">
@@ -269,13 +161,4 @@
         </div>
     </main>
 
-    <footer class="vh-25 bg-dark">
-
-    </footer>
-    
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'js/app.js' %}"></script>
-</body>
-</html>
+{% endblock content %} 
