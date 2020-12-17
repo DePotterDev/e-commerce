@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container pt-3">
+                    <!-- LOGO -->
+            <div class="row">
+                <div class="col-md-2">
+                    <a class="navbar-brand logo" href="#">AMOZONIA</a>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="search form-control" placeholder="Buscar...">
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Sign In</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Carrinho</a>
+                </div>
+            </div>
+        </div>
+                    <!-- nav menu-->
+            <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav w-100 nav-justified">
+
+                        <!-- menu item Bijuterias Acessorio -->
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle dropdown btn" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bijuterias & Acessório</a>
+
+                        <!-- drop down Bijuterias Acessorio -->
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a href="#" class="dropdown-item">Anel</a>
+                              <a href="#" class="dropdown-item">Bolsa</a>
+                              <a href="#" class="dropdown-item">Bijuterias</a>
+                            
+                          </div>
+                        </div>
+
+                        <li class="nav-item"><a href="" class="nav-link">Roupas</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Casa & Vida</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Saúde & Beleza</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Presentes</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Arte & Colecionáveis</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Suprimentos</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </div>
+     <!--END CONTAINER  -->
+     <div class="border-bottom"></div>
+    </header>
+
+    <main class="cart">
+        <div class=" vh-10 primary-color">
+            <div class="container">
+               <h2 class="m-0 p-3">Carrinho</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-md-6">
+                    <div class="items p-3 bg-cart border">
+                        <div class="row p-3 border-bottom">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="images/candle.jpg" class="border" alt="candle.jpg">
+                                </a>
+                            </div>
+                            <div class="item-title-price p-2">
+                                <h4 class="">Item</h4>
+                                <h5 class="discount"><span class="pr-3">R$89</span>R$58</h5>
+                            </div>
+                            <div class="item-size m-3">
+                                <div class="row">
+                                    <div>
+                                        <p>Tamanho</p>
+                                    </div>
+                                    <div class="mx-2">
+                                        <div class="input-group">
+                                            <select class="custom-select">
+                                                <option value="P">P</option>
+                                                <option selected value="M">M</option>
+                                                <option value="G">G</option>
+                                                <option value="GG">GG</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-quantity m-3">
+                                <div class="row">
+                                    <div><p>Quant.</p></div>
+                                    <div class="mx-2">
+                                        <div class="input-group">
+                                            <select class="custom-select">
+                                                <option selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete ml-3
+                            mt-3">
+                                <a href="#">X</a>
+                            </div>
+                        </div>
+                        <div class="row p-3 border-bottom">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="images/candle.jpg" class="border" alt="candle.jpg">
+                                </a>
+                            </div>
+                            <div class="item-title-price p-2">
+                                <h4 class="">Item</h4>
+                                <h5 class="discount"><span class="pr-3">R$89</span>R$58</h5>
+                            </div>
+                            <div class="item-size m-3">
+                                <div class="row">
+                                    <div>
+                                        <p>Tamanho</p>
+                                    </div>
+                                    <div class="mx-2">
+                                        <div class="input-group">
+                                            <select class="custom-select">
+                                                <option value="P">P</option>
+                                                <option selected value="M">M</option>
+                                                <option value="G">G</option>
+                                                <option value="GG">GG</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-quantity m-3">
+                                <div class="row">
+                                    <div><p>Quant.</p></div>
+                                    <div class="mx-2">
+                                        <div class="input-group">
+                                            <select class="custom-select">
+                                                <option selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete ml-3
+                            mt-3">
+                                <a href="#">X</a>
+                            </div>
+                        </div>
+                        <div class="row p-3 border-bottom">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="images/candle.jpg" class="border" alt="candle.jpg">
+                                </a>
+                            </div>
+                            <div class="item-title-price p-2">
+                                <h4 class="">Item</h4>
+                                <h5 class="discount"><span class="pr-3">R$89</span>R$58</h5>
+                            </div>
+                            <div class="item-size m-3">
+                                <div class="row">
+                                    <div>
+                                        <p>Tamanho</p>
+                                    </div>
+                                    <div class="mx-2">
+                                        <div class="input-group">
+                                            <select class="custom-select">
+                                                <option value="P">P</option>
+                                                <option selected value="M">M</option>
+                                                <option value="G">G</option>
+                                                <option value="GG">GG</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-quantity m-3">
+                                <div class="row">
+                                    <div><p>Quant.</p></div>
+                                    <div class="mx-2">
+                                        <div class="input-group">
+                                            <select class="custom-select">
+                                                <option selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete ml-3
+                            mt-3">
+                                <a href="#">X</a>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                    </div> 
+                    <!-- End item -->
+                    <h4 class="mt-3">
+                        <a href="#">Continue comprando</a>
+                    </h4>   
+                </div>
+                
+                <!-- TOTAL -->
+                <div class="col-md-5 offset-md-1">
+                    <div class="total bg-cart border p-3">
+                    <h3>TOTAL DE PEDIDOS</h3>
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Promo code">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">APLICAR</button>
+                        </div>
+                    </div>
+
+                    <div class="items py-3">
+                        <div class="row">
+                            <div class="col">
+                                <p>Itens</p>
+                            </div>
+                            <div class="col">
+                                <p>R$189</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Frete</p>
+                            </div>
+                            <div class="col">
+                                <p>R$10</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="discount">Disconto</p>
+                            </div>
+                            <div class="col">
+                                <p class="discount">R$29</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <strong>Preço Total</strong>
+                            </div>
+                            <div class="col">
+                                <strong>R$170</strong>
+                            </div>
+                        </div>
+                        </div>
+                         
+                    </div>
+                    <button type="button" class="btn btn-lg btn-block btn-dark mt-3" >FAZER PEDIDO</button>
+                </div>
+                
+
+            </div>
+            </div>
+        </div>
+    </main>
+  
+</body>
+</html>

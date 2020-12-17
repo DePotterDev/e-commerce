@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.logo {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: #FC7C0B;
+}
+
+.gutter-1 {
+  margin-bottom: 0 !important;
+  padding: 4px;
+}
+
+.vh-gutter {
+  margin-top: 4vh;
+}
+
+.vh-10 {
+  height: 10vh;
+  min-height: 10vh;
+}
+
+.vh-25 {
+  height: 25vh;
+  min-height: 25vh;
+}
+
+.vh-40 {
+  height: 40vh;
+  min-height: 40vh;
+}
+
+.vh-50 {
+  height: 50vh;
+  min-height: 50vh;
+}
+
+.vh-75 {
+  height: 75vh;
+  min-height: 75vh;
+}
+
+.equal {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+a {
+  color: #666666;
+}
+
+a:hover {
+  color: #8F0BFF;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+.discount {
+  color: red;
+}
+
+.bg-cart {
+  background-color: #eee;
+}
+
+.light-gray {
+  background-color: #aaa;
+}
+
+.primary-color {
+  background-color: #d0d0d0;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+.jumbotron {
+  background-image: url("../images/background-intro.jpg");
+  background-size: cover;
+}
+
+.small-card {
+  background-color: #E5E5E5;
+  background-size: cover;
+}
+
+.medium-card {
+  background-color: #E5E5E5;
+  background-size: cover;
+}
+
+.big-card {
+  background-color: #A01A1A;
+}
+
+.card-image {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+#shop .card-body h4 {
+  font-size: 14px;
+  font-style: italic;
+}
+#shop .card-body h5 {
+  font-size: 18px;
+}
+#shop .card-body h6 {
+  font-size: 20px;
+}
+
+.product h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #666666;
+}
+.product h3 {
+  font-size: 1rem;
+}
+.product .prices h3 {
+  font-size: 1.2rem;
+}
+.product .prices h3 span {
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.cart h2 {
+  font-size: 6vh;
+}
+.cart .bg-cart {
+  background-color: #eee;
+}
+.cart .cart-item img {
+  max-width: 5rem;
+}
+.cart .discount span {
+  color: #aaa;
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
+.expiration {
+  border: 1px solid #bbbbbb;
+}
+
+.expiration input {
+  border: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
