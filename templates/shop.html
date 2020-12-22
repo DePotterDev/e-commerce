@@ -33,182 +33,28 @@
                 </div>
                 <div class="col-md-10">
                     <div class="row">
+
+                    {% for item in object_list %}
                     <div class="col-md-3 py-3">
                             <div class="card">
-                                <a href="{% url 'core:product' %}">
+                                <a href="{{ item.get_absolute_url}}">
                                     <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
+                                        <h5 class="card-title text-center">{{item.title}}</h5>
+                                        <p class="text-center">
+                                        {% if item.discount_price %}
+                                        <span class="original-price mr-1">R${{ item.price }}</span>
+                                    R${{ item.discount_price }}
+                                        {% else %}
+                                        R${{ item.price }}
+                                        {% endif %}
+                                        </p>
                                     </div>
                                 </a>
                             </div>
                     </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    <div class="col-md-3 py-3">
-                            <div class="card">
-                                <a href="{% url 'core:product' %}">
-                                    <img src="{% static 'images/candle.jpg' %}" class="card-img-top" alt="candle  ">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Candles</h5>
-                                        <p class="text-center">R$ 59.97</p>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
+                    {% endfor %}
+                    
                 </div>
                     <nav class="py-3">
                         <ul class="pagination justify-content-center">

@@ -109,20 +109,26 @@
                 <h2 class="sub-title">Novos</h2>
                 <!-- PRODUCTS -->
                 <div class="row my-3">
-                {% for item in items %}
+                {% for item in object_list %}
                     <div class="col-md-3 mb-3">
-                        <a href="#">
+                        <a href="{{ item.get_absolute_url}}">
                             <div class="card">
                                 <img src="{% static 'images/candle.jpg' %}" class="img-fluid" alt="">
-                                <a href=""></a>
                                 <div class="card-body">
                                     <a href="#">
                                         <h4 class="text-center">{{ item.category }}</h4>
                                     </a>
                                     <h5 class="text-center">
-                                        <a href="#">{{ item.title }}</a>
+                                        <a href="{{ item.get_absolute_url}}">{{ item.title }}</a>
                                     </h5>
-                                    <h6 class="text-center">R${{ item.price }}</h6>
+                                    <h6 class="text-center">
+                                    {% if item.discount_price %}
+                                    <span class="original-price mr-1">R${{ item.price }}</span>
+                                    R${{ item.discount_price }}
+                                    {% else %}
+                                    R${{ item.price }}
+                                    {% endif %}
+                                    </h6>
                                 </div>
                             </div>
                         </a>

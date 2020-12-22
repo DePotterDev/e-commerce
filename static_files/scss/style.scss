@@ -101,6 +101,12 @@ figure{
   background-color: $primary-color;
 }
 
+.original-price{
+  color: $light-gray;
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
 // NAVIGATION
 
 .dropdown:hover>.dropdown-menu {

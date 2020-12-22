@@ -88,6 +88,12 @@ figure {
   background-color: #d0d0d0;
 }
 
+.original-price {
+  color: #aaa;
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
 .dropdown:hover > .dropdown-menu {
   display: block;
 }

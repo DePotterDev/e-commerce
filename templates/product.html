@@ -20,13 +20,20 @@
                 <img src="{% static 'images/candle.jpg' %}" class="img-fluid">
             </div>
             <div class="col-md-5">
-                <h2>Product Item Title</h2>
+                <h2>{{ object.title }}</h2>
                 <h5>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, minus. Corrupti, voluptatem libero! Animi quo officiis hic odio ex assumenda nostrum! Perferendis alias nobis accusamus maiores sequi sed, voluptatem natus.
                 </h5>
                 <div class="prices">
-                    <h3 class="discount"><span class="pr-3">R$89</span>R$89</h3>
-                    <h3>R$59</h4>
+                    {% if object.discount_price %}
+                    <h3 class="discount">
+                    <span class="pr-3">R${{object.price}}</span>R${{ object.discount_price }}</h3>
+                    {% else %}
+                        <h4>R${{object.price}}</h4>
+                    {% endif %}
+
+
+                   
                 </div>
                 <div class="col-sm-6 pl-0 py-3">
                     <div class="input-group">
