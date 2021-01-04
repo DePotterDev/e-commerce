@@ -30,10 +30,7 @@
                     <span class="pr-3">R${{object.price}}</span>R${{ object.discount_price }}</h3>
                     {% else %}
                         <h4>R${{object.price}}</h4>
-                    {% endif %}
-
-
-                   
+                    {% endif %}               
                 </div>
                 <div class="col-sm-6 pl-0 py-3">
                     <div class="input-group">
@@ -47,9 +44,11 @@
                             <label class="input-group-text" for="">Comprar</label>
                         </div>
                     </div>
+                    <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary">Add to cart</a>
+                    <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger">Remove</a>
                 </div>
                 <h3>Descrição</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, repellat, debitis placeat atque molestias laboriosam cum necessitatibus possimus ipsum nihil perspiciatis itaque tempore corporis dolores natus perferendis! Ratione quam quaerat laboriosam autem ipsum omnis esse nostrum cumque debitis, saepe perferendis tempore eaque repellat natus delectus impedit, est facilis corrupti soluta.</p>
+                <p>{{ object.description }}</p>
             </div>
         </div>
     </div>

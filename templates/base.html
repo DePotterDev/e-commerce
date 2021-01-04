@@ -24,7 +24,7 @@
                     <a href="#">Sign In</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="{% url 'core:cart' %}">Carrinho</a>
+                    <a href="#">Carrinho</a>
                 </div>
             </div>
         </div>
@@ -60,6 +60,14 @@
      <!--END CONTAINER  -->
     </header>
 <div class="border-bottom mb-3"></div>
+
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
 
 {% block content %}
 {% endblock content %}
