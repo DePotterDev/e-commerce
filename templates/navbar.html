@@ -17,8 +17,11 @@
                         <a href="{% url 'account_logout' %}">Logout</a>
                     </div>
                     <div class="col-md-1">
-                        <a href="#">Carrinho</a>
-                        <span class="cart-items-tag">{{ request.user | cart_item_count }}</span>
+                    <div class="row">
+                        <a href="#">Carrinho
+                        <span class="badge badge-dark">{{ request.user|cart_item_count }}</span>
+                        </a>
+                        </div>
                     </div>
 
                 {% else %}
