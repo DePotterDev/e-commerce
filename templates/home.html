@@ -136,32 +136,78 @@
                     {% endfor %}
                 </div>
 
+
+<!--PAGINATION-->
+        {% if is_paginated %}
+
                 <nav class="py-3">
                     <ul class="pagination justify-content-center">
+
+<!--PREVIOUS PAGES-->
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                    {% else %}
                         <li class="page-item disabled">
                             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
                               <span aria-hidden="true">&laquo;</span>
                             </a>
                           </li>
+
+                    {% endif %}
+
+                    {% for i in paginator.page_range %}
+
+<!--CURRENT PAGE-->
+                    {% if page_obj.number == i %}
                         <li class="page-item active" aria-current="page">
-                            <a href="" class="page-link">1
+                            <a href="?page={{ page_obj.number }}" class="page-link">{{ page_obj.number }}
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="page-item"><a href="" class="page-link">2</a></li>
+                        {% else %}
+                        <li class="page-item">
+                            <a href="?page={{ i }}" class="page-link">{{ i }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    
+                        {% comment %} <li class="page-item"><a href="" class="page-link">2</a></li>
                         <li class="page-item"><a href="" class="page-link">3</a></li>
                         <li class="page-item"><a href="" class="page-link">4</a></li>
                         <li class="page-item"><a href="" class="page-link">5</a></li>
                         <li class="page-item"><a href="" class="page-link">6</a></li>
                         <li class="page-item"><a href="" class="page-link">7</a></li>
-                        <li class="page-item"><a href="" class="page-link">8</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
+                        <li class="page-item"><a href="" class="page-link">8</a></li> {% endcomment %}
+                        
+                        
+                        
+                        {% if page_obj.has_next %}
+                        <li class="page-item ">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
                               <span aria-hidden="true">&raquo;</span>
                             </a>
                           </li>
+                                                
+
+                          {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Next" aria-disabled="true">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                          
+
+                          {% endif %}
                     </ul>
                 </nav>
+                {% endif %}
+                <!--END PAGINATION-->
+
+
             </section>
             <!-- END SHOP -->
         </div>

@@ -7,6 +7,7 @@ from django.utils import timezone
 
 class HomeView(ListView):
     model = Item
+    paginate_by = 4
     template_name = "home.html"
 
 class ShopView(ListView):
@@ -52,12 +53,11 @@ def remove_from_cart(request, slug):
             messages.info(request, "Este item foi removido do seu carrinho.")
             return redirect("core:product", slug=slug)
         else:
-            return redirect("core:product", slug=slug)
             messages.info(request, "Este item não estava no seu carrinho.")
+            return redirect("core:product", slug=slug)
     else:
         messages.info(request, "Não há ordem.")
         return redirect("core:product", slug=slug)
-
 
 def checkout(request):
     return render(request, "checkout.html")

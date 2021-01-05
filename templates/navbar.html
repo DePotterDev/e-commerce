@@ -1,0 +1,66 @@
+    {% load cart_template_tags %}
+    
+    <header class="header">
+        <div class="container pt-3">
+                    <!-- LOGO -->
+            <div class="row">
+                <div class="col-md-2">
+                    <a class="navbar-brand logo" href="{% url 'core:home'%}">AMOZONIA</a>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="search form-control" placeholder="Buscar...">
+                </div>
+
+                {% if request.user.is_authenticated %}
+
+                    <div class="col-md-1">
+                        <a href="{% url 'account_logout' %}">Logout</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#">Carrinho</a>
+                        <span class="cart-items-tag">{{ request.user | cart_item_count }}</span>
+                    </div>
+
+                {% else %}
+                    <div class="col-md-1">
+                        <a href="{% url 'account_login' %}">Login In</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="{% url 'account_signup' %}">Sign Up</a>
+                    </div>
+                {% endif %}
+                
+            </div>
+        </div>
+                    <!-- nav menu-->
+            <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav w-100 nav-justified">
+
+                        <!-- menu item Bijuterias Acessorio -->
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle dropdown btn" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bijuterias &#38; Acessório</a>
+
+                        <!-- drop down Bijuterias Acessorio -->
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a href="{% url 'core:shop' %}" class="dropdown-item">Anel</a>
+                              <a href="{% url 'core:shop' %}" class="dropdown-item">Bolsa</a>
+                              <a href="{% url 'core:shop' %}" class="dropdown-item">Bijuterias</a>
+                            
+                          </div>
+                        </div>
+
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Roupas</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Casa &#38; Vida</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Saúde &#38; Beleza</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Presentes</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Arte</a></li>
+                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Suprimentos</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </div>
+     <!--END CONTAINER  -->
+    </header>
+<div class="border-bottom mb-3"></div>

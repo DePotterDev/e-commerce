@@ -1,0 +1,25 @@
+{
+  "name": "webshop",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">     Django e-commerce   </p> </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "sass --watch static_files/scss/style.scss static_files/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DePotterDev/e-commerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DePotterDev/e-commerce/issues"
+  },
+  "homepage": "https://github.com/DePotterDev/e-commerce#readme",
+  "dependencies": {
+    "sass": "^1.32.0"
+  },
+  "devDependencies": {}
+}

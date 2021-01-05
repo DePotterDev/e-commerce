@@ -4,73 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-Vindo</title>
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
+{% include "navbar.html" %}
+
 <body>
-    <header class="header">
-        <div class="container pt-3">
-                    <!-- LOGO -->
-            <div class="row">
-                <div class="col-md-2">
-                    <a class="navbar-brand logo" href="{% url 'core:home'%}">AMOZONIA</a>
-                </div>
-                <div class="col-md-8">
-                    <input type="text" class="search form-control" placeholder="Buscar...">
-                </div>
-                <div class="col-md-1">
-                    <a href="#">Sign In</a>
-                </div>
-                <div class="col-md-1">
-                    <a href="#">Carrinho</a>
-                </div>
-            </div>
-        </div>
-                    <!-- nav menu-->
-            <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav w-100 nav-justified">
-
-                        <!-- menu item Bijuterias Acessorio -->
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle dropdown btn" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bijuterias &#38; Acessório</a>
-
-                        <!-- drop down Bijuterias Acessorio -->
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a href="{% url 'core:shop' %}" class="dropdown-item">Anel</a>
-                              <a href="{% url 'core:shop' %}" class="dropdown-item">Bolsa</a>
-                              <a href="{% url 'core:shop' %}" class="dropdown-item">Bijuterias</a>
-                            
-                          </div>
-                        </div>
-
-                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Roupas</a></li>
-                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Casa &#38; Vida</a></li>
-                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Saúde &#38; Beleza</a></li>
-                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Presentes</a></li>
-                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Arte</a></li>
-                        <li class="nav-item"><a href="{% url 'core:shop' %}" class="nav-link">Suprimentos</a></li>
-                    </ul>
-                </div>
-            </nav>
-    </div>
-     <!--END CONTAINER  -->
-    </header>
-<div class="border-bottom mb-3"></div>
 
 {% if messages %}
     {% for message in messages %}
-    <div class="alert alert-{{ message.tags }}" role="alert">
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         {{ message }}
-    </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     {% endfor %}
 {% endif %}
 
 {% block content %}
 {% endblock content %}
+
+{% block extra_body %}
+{% endblock %}
 
 <footer class="vh-25 bg-dark"></footer>
 
