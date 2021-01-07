@@ -12,17 +12,29 @@
             <div class="row my-5">
                 <div class="col-md-6">
                     <div class="items p-3 bg-cart border">
+
+
+<!--ITEMS -->
+{% for order_item in object.items.all %}
                         <div class="row p-3 border-bottom">
                             <div class="cart-image">
                                 <a href="#" class="cart-item">
                                     <img src="{% static 'images/candle.jpg' %}" class="border" alt="candle.jpg">
                                 </a>
                             </div>
-                            <div class="item-title-price p-2">
-                                <h4 class="">Item</h4>
-                                <h5 class="discount"><span class="pr-3">R$89</span>R$58</h5>
+                            {% if order_item.item.discount_price %}
+                                <div class="item-title-price p-2">
+                                <h4 class="">{{ order_item.item.title }}</h4>
+                                <h5 class="discount"><span class="pr-3">R${{ order_item.item.price }}</span>R${{ order_item.item.discount_price }}</h5>
                             </div>
-                            <div class="item-size m-3">
+                            {% else %}
+                                <div class="item-title-price p-2">
+                                <h4 class="">{{ order_item.item.title }}</h4>
+                                <h5>R${{ order_item.item.price }}</h5>
+                            </div>
+                            {% endif %}
+                           
+                            {% comment %} <div class="item-size m-3">
                                 <div class="row">
                                     <div>
                                         <p>Tamanho</p>
@@ -38,14 +50,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                             <div class="item-quantity m-3">
                                 <div class="row">
                                     <div><p>Quant.</p></div>
                                     <div class="mx-2">
                                         <div class="input-group">
                                             <select class="custom-select">
-                                                <option selected>1</option>
+                                                <option selected>{{order_item.quantity}}</option>
+                                                <option value="2">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
@@ -54,11 +67,27 @@
                                     </div>
                                 </div>
                             </div>
+<!-- TOTAL -->
+                            <div class="item-total m-3">
+                            <p>Total</p>
+                            {% if order_item.item.discount_price %}
+                                <h5>{{ order_item.get_total_discount_price }}</h5>
+                                <span class="badge badge-danger">salvou {{ order_item.get_amount_saved|floatformat:2 }}</span> 
+                            {% else %}
+                                <h5>{{ order_item.get_total_item_price}}</h5>
+                            {% endif %}
+                            
+                            </div>
+
+
+<!-- DELETE-->
                             <div class="delete ml-3
                             mt-3">
                                 <a href="#">X</a>
                             </div>
                         </div>
+{% endfor %}
+
                         <div class="row p-3 border-bottom">
                             <div class="cart-image">
                                 <a href="#" class="cart-item">
@@ -195,7 +224,7 @@
                                 <p class="discount">Disconto</p>
                             </div>
                             <div class="col">
-                                <p class="discount">R$29</p>
+                                <p class="discount">R${{ object.get_discount_total }}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -203,7 +232,7 @@
                                 <strong>Preço Total</strong>
                             </div>
                             <div class="col">
-                                <strong>R$170</strong>
+                                <strong>R${{ object.get_total|floatformat:2 }}</strong>
                             </div>
                         </div>
                         </div>

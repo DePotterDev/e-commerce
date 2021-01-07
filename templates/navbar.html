@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-md-1">
                     <div class="row">
-                        <a href="#">Carrinho
+                        <a href="{% url 'core:cart' %}">Carrinho
                         <span class="badge badge-dark">{{ request.user|cart_item_count }}</span>
                         </a>
                         </div>
