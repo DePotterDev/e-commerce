@@ -86,109 +86,21 @@
                                 <a href="#">X</a>
                             </div>
                         </div>
-{% endfor %}
+{% empty %} 
 
-                        <div class="row p-3 border-bottom">
-                            <div class="cart-image">
-                                <a href="#" class="cart-item">
-                                    <img src="{% static 'images/candle.jpg' %}" class="border" alt="candle.jpg">
-                                </a>
-                            </div>
-                            <div class="item-title-price p-2">
-                                <h4 class="">Item</h4>
-                                <h5 class="discount"><span class="pr-3">R$89</span>R$58</h5>
-                            </div>
-                            <div class="item-size m-3">
-                                <div class="row">
-                                    <div>
-                                        <p>Tamanho</p>
-                                    </div>
-                                    <div class="mx-2">
-                                        <div class="input-group">
-                                            <select class="custom-select">
-                                                <option value="P">P</option>
-                                                <option selected value="M">M</option>
-                                                <option value="G">G</option>
-                                                <option value="GG">GG</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-quantity m-3">
-                                <div class="row">
-                                    <div><p>Quant.</p></div>
-                                    <div class="mx-2">
-                                        <div class="input-group">
-                                            <select class="custom-select">
-                                                <option selected>1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="delete ml-3
-                            mt-3">
-                                <a href="#">X</a>
-                            </div>
-                        </div>
-                        <div class="row p-3 border-bottom">
-                            <div class="cart-image">
-                                <a href="#" class="cart-item">
-                                    <img src="{% static 'images/candle.jpg' %}" class="border" alt="candle.jpg">
-                                </a>
-                            </div>
-                            <div class="item-title-price p-2">
-                                <h4 class="">Item</h4>
-                                <h5 class="discount"><span class="pr-3">R$89</span>R$58</h5>
-                            </div>
-                            <div class="item-size m-3">
-                                <div class="row">
-                                    <div>
-                                        <p>Tamanho</p>
-                                    </div>
-                                    <div class="mx-2">
-                                        <div class="input-group">
-                                            <select class="custom-select">
-                                                <option value="P">P</option>
-                                                <option selected value="M">M</option>
-                                                <option value="G">G</option>
-                                                <option value="GG">GG</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-quantity m-3">
-                                <div class="row">
-                                    <div><p>Quant.</p></div>
-                                    <div class="mx-2">
-                                        <div class="input-group">
-                                            <select class="custom-select">
-                                                <option selected>1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="delete ml-3
-                            mt-3">
-                                <a href="#">X</a>
-                            </div>
-                        </div>
-                        <!-- End row -->
+<div class="row p-3 border-bottom">
+    <h4>Carrinho esta Vazio</h4>
+</div>
+
+{% endfor %}
                     </div> 
                     <!-- End item -->
                     <h4 class="mt-3">
-                        <a href="#">Continue comprando</a>
+                        <a href="/">Continue comprando</a>
                     </h4>   
                 </div>
+
+ {%if object.get_total %}               
                 
                 <!-- TOTAL -->
                 <div class="col-md-5 offset-md-1">
@@ -208,7 +120,7 @@
                                 <p>Itens</p>
                             </div>
                             <div class="col">
-                                <p>R$189</p>
+                                <p>R${{ object.get_total }}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -232,14 +144,16 @@
                                 <strong>Preço Total</strong>
                             </div>
                             <div class="col">
-                                <strong>R${{ object.get_total|floatformat:2 }}</strong>
+                                <strong>R${{ object.get_total_with_discount}}</strong>
                             </div>
                         </div>
                         </div>
                          
                     </div>
-                    <a href="{% url 'core:checkout' %}" class="btn btn-lg btn-block btn-dark mt-3" >FAZER PEDIDO</a>
+                    <a href="{% url 'core:checkout' %}" class="btn btn-lg btn-block btn-dark mt-3">FAZER PEDIDO</a>
                 </div>
+
+                {% endif %}
                 
 
             </div>

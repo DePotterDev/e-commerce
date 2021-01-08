@@ -82,3 +82,27 @@ def remove_from_cart(request, slug):
 def checkout(request):
     return render(request, "checkout.html")
 
+
+@login_required
+def remove_single_item_from_cart(request, slug):
+    item = get_object_or_404(Item, slug=slug)
+    order_qs = Order.objects.filter(user=request.user, ordered=False)
+    if order_qs.exists():
+        order = order_qs[0]
+        # check if the order item is in the order
+        if order.items.filter(item__slug=item.slug).exists():
+            order_item = OrderItem.objects.filter(item=item, user=request.user, ordered=False)[0]
+            order_item.quantity -= 1
+            order_item.save()
+            messages.info(request, "Removeu um item -1, o carrinho está atualizado.")
+            return redirect("core:cart")
+        else:
+            messages.info(request, "Este item não estava no seu carrinho.")
+            return redirect("core:product", slug=slug)
+    else:
+        messages.info(request, "Não há ordem.")
+        return redirect("core:product", slug=slug)
+
+def checkout(request):
+    return render(request, "checkout.html")
+

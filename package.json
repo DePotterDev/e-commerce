@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/DePotterDev/e-commerce#readme",
   "dependencies": {
+    "bootstrap-icons": "^1.3.0",
     "sass": "^1.32.0"
-  },
-  "devDependencies": {}
+  }
 }
