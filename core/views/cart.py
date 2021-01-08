@@ -4,14 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, View
-from .models import Item, OrderItem, Order
+from core.models import Item, OrderItem, Order
 from django.shortcuts import redirect
 from django.utils import timezone
-
-class HomeView(ListView):
-    model = Item
-    paginate_by = 4
-    template_name = "home.html"
 
 
 class OrderSummaryView(LoginRequiredMixin, View):
@@ -27,14 +22,6 @@ class OrderSummaryView(LoginRequiredMixin, View):
             return redirect("/")
             
         return render(self.request, 'cart.html')
-
-class ShopView(ListView):
-    model = Item
-    template_name = "shop.html"
-
-class ItemDetailView(DetailView):
-    model = Item
-    template_name = "product.html"
 
 @login_required
 def add_to_cart(request, slug):
@@ -102,7 +89,3 @@ def remove_single_item_from_cart(request, slug):
     else:
         messages.info(request, "Não há ordem.")
         return redirect("core:product", slug=slug)
-
-def checkout(request):
-    return render(request, "checkout.html")
-
