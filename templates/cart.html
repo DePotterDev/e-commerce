@@ -17,6 +17,7 @@
 <!--ITEMS -->
 {% for order_item in object.items.all %}
                         <div class="row p-3 border-bottom">
+                        <p>{{ forloop.counter }}</p>
                             <div class="cart-image">
                                 <a href="#" class="cart-item">
                                     <img src="{% static 'images/candle.jpg' %}" class="border" alt="candle.jpg">
@@ -52,9 +53,17 @@
                                 </div>
                             </div> {% endcomment %}
                             <div class="item-quantity m-3">
-                                <div class="row">
+                                {% comment %} <div class="row"> {% endcomment %}
                                     <div><p>Quant.</p></div>
-                                    <div class="mx-2">
+                                    
+                                    <div class="row">
+                                        <a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}"><i class="bi bi-dash-square-fill mr-2"></i></a>
+                                        <p>{{order_item.quantity}}</p>
+                                        <a href="{% url 'core:add-to-cart' order_item.item.slug %}"><i class="bi bi-plus-square-fill ml-2"></i></a>
+                                    </div>
+                                   
+
+                                    {% comment %} <div class="mx-2">
                                         <div class="input-group">
                                             <select class="custom-select">
                                                 <option selected>{{order_item.quantity}}</option>
@@ -64,9 +73,9 @@
                                                 <option value="4">4</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                                 </div>
-                            </div>
+                            {% comment %} </div> {% endcomment %}
 <!-- TOTAL -->
                             <div class="item-total m-3">
                             <p>Total</p>
