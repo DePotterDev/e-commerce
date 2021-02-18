@@ -23,5 +23,5 @@ urlpatterns = [
     path('remove-from-cart/<slug>/', cart.remove_from_cart, name='remove-from-cart'),
     path('remove-item-from-cart/<slug>/', cart.remove_single_item_from_cart, name='remove-single-item-from-cart'),
     path('carrinho/', cart.OrderSummaryView.as_view(), name='cart'),
-    path('checkout/', checkout.check_out, name='checkout'),
+    path('checkout/', checkout.CheckoutView.as_view(), name='checkout'),
 ]

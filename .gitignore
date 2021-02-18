@@ -8,7 +8,7 @@ media
 *.env
 *.venv
 *.node_modules
-node_modules
+node_modules/
 
 # Accept these files in the repository
 !.gitignore

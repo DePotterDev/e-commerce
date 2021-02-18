@@ -92,7 +92,7 @@
 <!-- DELETE-->
                             <div class="delete ml-3
                             mt-3">
-                                <a href="#">X</a>
+                            <a href="{% url 'core:remove-from-cart' order_item.item.slug %}">X</a>
                             </div>
                         </div>
 {% empty %} 

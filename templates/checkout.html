@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <main class="checkout">
@@ -15,16 +16,16 @@
                 <div class="col-sm-6">
                     <div class="address bg-cart border p-3">
                         <h3>ENDEREÇO DE ENTREGA</h3>
-                        <form action="#">
-                            <div class="form-group">
+                        {% comment %} <form action="#"> {% endcomment %}
+                            {% comment %} <div class="form-group">
                                 <label for="payment">Primeiro Nome</label>
                                 <input type="text" class="form-control" id="fname" placeholder="Primeiro Nome">
                             </div>
                             <div class="form-group">
                                 <label for="payment">Sobrenome</label>
                                 <input type="text" class="form-control" id="lname" placeholder="Sobrenome">
-                            </div>
-                            <div class="form-group">
+                            </div> {% endcomment %}
+                            {% comment %} <div class="form-group">
                                 <label for="payment">Endereço</label>
                                 <input type="text" class="form-control" id="address" placeholder="Endereço">
                             </div>
@@ -44,9 +45,33 @@
                                 <label for="payment">CEP</label>
                                 <input type="text" class="form-control" id="cep" placeholder="00000-000">
                             </div>
-                        </form>
+                        </form> {% endcomment %}
 
-                        <h3 class="py-3">Pagamento</h3>
+<!-- PAYMENT METHODS-->
+
+                            <form>
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <button class="btn btn-primary" type="submit">Checkout</button>
+                            </form>
+
+                            {% comment %} <form action="">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="payment" type="radio" id="payment" value="credit">
+                                    <label class="form-check-label" for="payment">Crédito</label>
+                                </div>
+                                    <div class="form-check">
+                                    <input class="form-check-input" name="payment" type="radio" id="payment" value="debit">
+                                    <label class="form-check-label" for="payment">Stripe</label>
+                                </div>
+                                    <div class="form-check">
+                                    <input class="form-check-input" name="payment" type="radio" id="payment" value="debit">
+                                    <label class="form-check-label" for="payment">Paypal</label>
+                                </div>
+                            </form> {% endcomment %}
+
+<!--PAYMENT -->
+                        {% comment %} <h3 class="py-3">Pagamento</h3>
                         <form action="">
                             <div class="form-check">
                                 <input class="form-check-input" name="payment" type="radio" id="payment" value="credit">
@@ -85,7 +110,9 @@
                                 <label for="payment">Nome No Cartão</label>
                                 <input type="text" class="form-control" id="nome" placeholder="Nome No Cartão">
                             </div>
-                        </form>
+                        </form> {% endcomment %}
+<!--END PAYMENT-->
+
                     </div>
                     <button type="button" class="btn btn-lg btn-block btn-dark mt-3" >FAZER PEDIDO</button>
                 </div>
