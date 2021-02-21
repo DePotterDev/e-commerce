@@ -21,8 +21,8 @@ class CheckoutForm(forms.Form):
     CEP = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': '13165-000'
     }), label='CEP')
-    same_billing_address = forms.BooleanField(widget=forms.CheckboxInput(), label='Mesmo Endereço de Cobrança')
-    save_info = forms.BooleanField(widget=forms.CheckboxInput(), label='Salvar Informação')
+    same_billing_address = forms.BooleanField(widget=forms.CheckboxInput(), label='Mesmo Endereço de Cobrança', required=False)
+    save_info = forms.BooleanField(widget=forms.CheckboxInput(), label='Salvar Informação', required=False)
     payment_option = forms.ChoiceField(widget=forms.RadioSelect(), choices=PAYMENT_CHOICES, label='Opções de Pagamento')
 
     
