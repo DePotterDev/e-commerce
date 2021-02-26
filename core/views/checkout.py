@@ -22,7 +22,7 @@ class CheckoutView(View):
         print(self.request.POST)
         if form.is_valid():
             print(form.cleaned_data)
-            print("O formulário é válido.")
+            print("The form is valid")
             return redirect('core:checkout')
         messages.warning(self.request, "Checkout Falhado")
         return redirect('core:checkout')
