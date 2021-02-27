@@ -19,19 +19,20 @@ class CheckoutForm(forms.Form):
     state = BRStateChoiceField(label='Estado')
 
     city = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'São Paulo'
+        'placeholder': 'São Paulo',
     }), label='Cidade', max_length=100)
 
     # CEP = forms.CharField(widget=forms.TextInput(attrs={
     #     'placeholder': '13165-000'
     # }), label='CEP')
 
-    CEP = BRZipCodeField(label='CEP', max_length=9, help_text="Format: XXXXX-XXX")
+    CEP = BRZipCodeField(label='CEP', max_length=9)
 
 
     same_billing_address = forms.BooleanField(widget=forms.CheckboxInput(), label='Mesmo Endereço de Cobrança', required=False)
 
     save_info = forms.BooleanField(widget=forms.CheckboxInput(), label='Salvar Informação', required=False)
     payment_option = forms.ChoiceField(widget=forms.RadioSelect(), choices=PAYMENT_CHOICES, label='Opções de Pagamento', required=True)
+
 
     

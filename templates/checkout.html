@@ -9,22 +9,20 @@
                <h2 class="m-0 p-3">Checkout</h2>
             </div>
         </div>
-
         <div class="container">
             <div class="row my-5">        
                 <div class="col-sm-6">
+<!--FORM -->
                  <form method="POST">
                     <div class="address bg-cart border p-3">
-                        <h3>ENDEREÇO DE ENTREGA</h3>
-
-<!-- FORM-->
-                            
+                        <h3>ENDEREÇO DE ENTREGA</h3>                         
                             {% csrf_token %}
                             {{ form | crispy }}
 
                     </div>
                     <button type="submit" class="btn btn-lg btn-block btn-dark mt-3" >FAZER PEDIDO</button>
                     </form>
+
                 </div>
                 
                 <!-- TOTAL -->
@@ -51,9 +49,6 @@
                         <div>R$130 <span class="discount"> R$99</span></div>
                         <div><a href="#">X</a></div>
                     </div>
-
-
-
 
                     <div class="items py-3">
                         <div class="row">
