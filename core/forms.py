@@ -16,9 +16,6 @@ class CheckoutForm(forms.Form):
         'placeholder': 'Apt. 10'
     }),required=False, label='Ap, Cond. (opcional)', max_length=100)
 
-    # state = forms.CharField(widget=forms.TextInput(attrs={
-    #     'placeholder': 'São Paulo'
-    # }),label='Estado')
     state = BRStateChoiceField(label='Estado')
 
     city = forms.CharField(widget=forms.TextInput(attrs={
@@ -30,7 +27,6 @@ class CheckoutForm(forms.Form):
     # }), label='CEP')
 
     CEP = BRZipCodeField(label='CEP', max_length=9, help_text="Format: XXXXX-XXX")
-
 
 
     same_billing_address = forms.BooleanField(widget=forms.CheckboxInput(), label='Mesmo Endereço de Cobrança', required=False)

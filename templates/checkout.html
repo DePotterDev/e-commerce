@@ -11,108 +11,16 @@
         </div>
 
         <div class="container">
-            <div class="row my-5">
-               
+            <div class="row my-5">        
                 <div class="col-sm-6">
                  <form method="POST">
                     <div class="address bg-cart border p-3">
                         <h3>ENDEREÇO DE ENTREGA</h3>
-                        {% comment %} <form action="#"> {% endcomment %}
-                            {% comment %} <div class="form-group">
-                                <label for="payment">Primeiro Nome</label>
-                                <input type="text" class="form-control" id="fname" placeholder="Primeiro Nome">
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">Sobrenome</label>
-                                <input type="text" class="form-control" id="lname" placeholder="Sobrenome">
-                            </div> {% endcomment %}
-                            {% comment %} <div class="form-group">
-                                <label for="payment">Endereço</label>
-                                <input type="text" class="form-control" id="address" placeholder="Endereço">
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">Ap, Cond. (opcional)</label>
-                                <input type="text" class="form-control" id="address2" placeholder="Ap, Cond.">
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">Estado</label>
-                                <input type="text" class="form-control" id="state" placeholder="Estado">
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">Cidade</label>
-                                <input type="text" class="form-control" id="city" placeholder="Cidade">
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">CEP</label>
-                                <input type="text" class="form-control" id="cep" placeholder="00000-000">
-                            </div>
-                        </form> {% endcomment %}
 
-<!-- PAYMENT METHODS-->
-
+<!-- FORM-->
                             
                             {% csrf_token %}
                             {{ form | crispy }}
-                            {% comment %} <button class="btn btn-primary" type="submit">Checkout</button> {% endcomment %}
-                            
-
-                            {% comment %} <form action="">
-                                <div class="form-check">
-                                    <input class="form-check-input" name="payment" type="radio" id="payment" value="credit">
-                                    <label class="form-check-label" for="payment">Crédito</label>
-                                </div>
-                                    <div class="form-check">
-                                    <input class="form-check-input" name="payment" type="radio" id="payment" value="debit">
-                                    <label class="form-check-label" for="payment">Stripe</label>
-                                </div>
-                                    <div class="form-check">
-                                    <input class="form-check-input" name="payment" type="radio" id="payment" value="debit">
-                                    <label class="form-check-label" for="payment">Paypal</label>
-                                </div>
-                            </form> {% endcomment %}
-
-<!--PAYMENT -->
-                        {% comment %} <h3 class="py-3">Pagamento</h3>
-                        <form action="">
-                            <div class="form-check">
-                                <input class="form-check-input" name="payment" type="radio" id="payment" value="credit">
-                                <label class="form-check-label" for="payment">Crédito</label>
-                            </div>
-                                <div class="form-check">
-                                <input class="form-check-input" name="payment" type="radio" id="payment" value="debit">
-                                <label class="form-check-label" for="payment">Débito</label>
-                            </div>
-                                <div class="form-check">
-                                <input class="form-check-input" name="payment" type="radio" id="payment" value="debit">
-                                <label class="form-check-label" for="payment">Paypal</label>
-                            </div>
-
-                            <div class="form-group py-3">
-                                <label for="payment">CPF</label>
-                                <input type="number" class="form-control" id="cpf" placeholder="xxx-xxx-xxx">
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">Número Do Cartão</label>
-                                <input type="number" class="form-control" id="payment" placeholder="4111 1111 1111 1111">
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">Data De Validade (MM/YY)</label>
-                                <span class="expiration">
-                                    <input type="text" name="month" placeholder="MM" maxlength="2" size="2" />
-                                    <span>/</span>
-                                    <input type="text" name="year" placeholder="YY" maxlength="2" size="2" />
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">CVV</label>
-                                <input type="number" class="form-control" id="payment" placeholder="xxx">
-                            </div>
-                            <div class="form-group">
-                                <label for="payment">Nome No Cartão</label>
-                                <input type="text" class="form-control" id="nome" placeholder="Nome No Cartão">
-                            </div>
-                        </form> {% endcomment %}
-<!--END PAYMENT-->
 
                     </div>
                     <button type="submit" class="btn btn-lg btn-block btn-dark mt-3" >FAZER PEDIDO</button>
