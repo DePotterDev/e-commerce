@@ -29,7 +29,7 @@ class CheckoutForm(forms.Form):
     CEP = BRZipCodeField(label='CEP', max_length=9)
 
 
-    same_billing_address = forms.BooleanField(widget=forms.CheckboxInput(), label='Mesmo Endereço de Cobrança', required=False)
+    same_shipping_address = forms.BooleanField(widget=forms.CheckboxInput(), label='Mesmo endereço de entrega', required=False)
 
     save_info = forms.BooleanField(widget=forms.CheckboxInput(), label='Salvar Informação', required=False)
     payment_option = forms.ChoiceField(widget=forms.RadioSelect(), choices=PAYMENT_CHOICES, label='Opções de Pagamento', required=True)
